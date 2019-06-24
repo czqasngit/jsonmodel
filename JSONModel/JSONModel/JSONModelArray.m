@@ -48,12 +48,13 @@
 
 -(id)objectAtIndex:(NSUInteger)index
 {
-    if(_storage.count == 0) return nil;
+    if(_storage.count <= index) return nil ;
 	return [self objectAtIndexedSubscript:index];
 }
 
 -(id)objectAtIndexedSubscript:(NSUInteger)index
 {
+    if(_storage.count <= index) return nil ;
     id object = _storage[index];
     if (![object isMemberOfClass:_targetClass]) {
         NSError* err = nil;
