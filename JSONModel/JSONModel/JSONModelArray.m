@@ -48,6 +48,7 @@
 
 -(id)objectAtIndex:(NSUInteger)index
 {
+    if(_storage.count == 0) return nil;
 	return [self objectAtIndexedSubscript:index];
 }
 
