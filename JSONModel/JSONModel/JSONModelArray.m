@@ -36,7 +36,9 @@
 
 -(id)firstObject
 {
-    return [self objectAtIndex:0];
+    if(_storage.count > 0)
+        return [self objectAtIndex:0];
+    return nil ;
 }
 
 -(id)lastObject
